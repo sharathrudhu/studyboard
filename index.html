@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaler FE Study Board</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <div id="main">
+        <div id="navbarOne">
+            <div id="navBar">
+                <button class="navbarLinks" value="Home" onclick="openLink(event, '/pagehome.html')">
+                    <div class="navicon">
+                        <span class="icon">
+                            <img src="./images/house.png" alt="house icon">
+                        </span>
+                        <span class="text">HOME</span>
+                    </div>
+                </button>
+                <button class="navbarLinks" value="HTML" onclick="openLink(event, '/pagehtml.html')"
+                    id="navBarDefaultOpen">
+                    <div class="navicon">
+                        <span class="icon">
+                            <img src="./images/html.png" alt="html icon">
+                        </span>
+                        <span class="text">HTML</span>
+                    </div>
+                </button>
+                <button class="navbarLinks" value="CSS" onclick="openLink(event, '/pagecss.html')">
+                    <div class="navicon">
+                        <span class="icon">
+                            <img src="./images/css.png" alt="css icon">
+                        </span>
+                        <span class="text">CSS</span>
+                    </div>
+                </button>
+                <button class="navbarLinks" value="JS" onclick="openLink(event, '/pagejs.html')">
+                    <div class="navicon">
+                        <span class="icon">
+                            <img src="./images/javascript.png" alt="">
+                        </span>
+                        <span class="text">JS</span>
+                    </div>
+                </button>
+            </div>
+            <div id="userAccount">
+                <button class="navbarLinks">
+                    <img src="./images/user.png" alt="">
+                </button>
+            </div>
+        </div>
+        <div id="tabcontent" class="tabcontent">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
