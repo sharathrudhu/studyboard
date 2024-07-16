@@ -1,4 +1,12 @@
-function openLink(evt, cityName) {
+function logBaseURL() {
+    const baseURL = window.location.origin + window.location.pathname;
+    console.log('Base URL:', baseURL);
+}
+
+logBaseURL();
+
+
+/* function openLink(evt, cityName) {
     var i, tablinks, tabcontent;
     tablinks = document.getElementsByClassName("navbarLinks");
     for (i = 0; i < tablinks.length; i++) {
@@ -42,3 +50,4 @@ function openNavLink(evt, cityName) {
 }
 
 // Get the element with id="defaultOpen" and click on it
+ */
