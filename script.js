@@ -5,14 +5,23 @@ function logBaseURL() {
 
 logBaseURL();
 
+function getFetchURL(filename) {
+    const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
+    return `${window.location.origin}${basePath}/${filename}`;
+}
 
-/* function openLink(evt, cityName) {
+function openLink(evt, cityName) {
     var i, tablinks, tabcontent;
     tablinks = document.getElementsByClassName("navbarLinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     evt.currentTarget.className += " active";
+
+    // Example usage:
+    const fetchURL = getFetchURL(cityName);
+
+    console.log('Fetch URL:', fetchURL);
 
     // Load the content dynamically
     fetch(cityName)
@@ -34,7 +43,7 @@ logBaseURL();
 document.getElementById("navBarDefaultOpen").click();
 
 // secondary phase
-
+/* 
 function openNavLink(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("contenthigh");
