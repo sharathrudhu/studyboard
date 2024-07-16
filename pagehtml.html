@@ -12,7 +12,7 @@
 <body>
     <div id="page">
         <div id="navbarTwo">
-            <button class="navbarTwoLinks" value="HTML101" onclick="openNavLink(event, '1101')">
+            <button class="navbarTwoLinks" value="HTML101" onclick="openNavLink(event, './pages/1101.html')" id="navDefaultOpen">
                 101.HTML Intro
             </button>
             <button class="navbarTwoLinks" value="HTML102" onclick="openNavLink(event, '1102')">
@@ -55,6 +55,11 @@
                 114.Validations
             </button>
         </div>
+
+        <div id="contenthigh" class="contenthigh">
+            <!-- Content will be loaded here -->
+        </div>
+
         <div id="1101" class="contenthigh">
             <iframe src="./pages/1101.html"></iframe>
         </div>

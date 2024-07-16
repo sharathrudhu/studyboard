@@ -17,7 +17,7 @@ function getFetchURL(filename) {
 }
 
 function openLink(evt, cityName) {
-    var i, tablinks, tabcontent;
+    var i, tablinks;
     tablinks = document.getElementsByClassName("navbarLinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -47,6 +47,38 @@ function openLink(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("navBarDefaultOpen").click();
+
+function openNavLink(evt, cityName) {
+    var i, tablinks;
+    tablinks = document.getElementsByClassName("navbarTwoLinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    evt.currentTarget.className += " active";
+
+    // Example usage:
+    const fetchURL = getFetchURL(cityName);
+
+    console.log('Fetch URL 2:', fetchURL);
+
+    // Load the content dynamically
+    fetch(fetchURL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('contenthigh').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error fetching page:', error);
+        });
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("navDefaultOpen").click();
 
 // secondary phase
 /* 
