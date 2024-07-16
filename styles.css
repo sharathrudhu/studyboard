@@ -126,7 +126,7 @@
     display: block;
     background: none;
     border: none;
-    height: 60px;
+    height: 40px;
     color: #FFF;
 
     font-family: "Roboto", sans-serif;
@@ -142,7 +142,7 @@
 }
 
 #navbarTwo button.active{
-    border: 5px groove #FFD600;
+    background-color: #FFD600;
     font-weight: 700;
     color: #FFF;
 }
@@ -150,7 +150,6 @@
 .contenthigh {
     width: calc(100vw - 400px);
     height: 100vh;
-    display: none;
 }
 
 .contenthigh iframe {
