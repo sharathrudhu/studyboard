@@ -66,3 +66,18 @@ function initializeDefaultTab() {
 }
 
 initializeDefaultTab();
+
+let currentIndex = 0;
+const buttons = document.querySelectorAll('.navbarTwoLinks');
+
+function navigate(direction) {
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = buttons.length - 1; // Loop to the last button
+    } else if (currentIndex >= buttons.length) {
+        currentIndex = 0; // Loop to the first button
+    }
+
+    buttons[currentIndex].click();
+}
