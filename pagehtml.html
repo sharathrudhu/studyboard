@@ -15,43 +15,43 @@
                 id="navDefaultOpen">
                 101.HTML Intro
             </button>
-            <button class="navbarTwoLinks" value="HTML102" onclick="openNavLink(event, '1102')">
+            <button class="navbarTwoLinks" value="HTML102" onclick="openNavLink(event, './pages/1102')">
                 102.HTML Structure
             </button>
-            <button class="navbarTwoLinks" value="HTML103" onclick="openNavLink(event, '1103')">
+            <button class="navbarTwoLinks" value="HTML103" onclick="openNavLink(event, './pages/1103')">
                 103.Types of Tags
             </button>
-            <button class="navbarTwoLinks" value="HTML104" onclick="openNavLink(event, '1104')">
+            <button class="navbarTwoLinks" value="HTML104" onclick="openNavLink(event, './pages/1104')">
                 104.Attributes
             </button>
-            <button class="navbarTwoLinks" value="HTML105" onclick="openNavLink(event, '1105')">
+            <button class="navbarTwoLinks" value="HTML105" onclick="openNavLink(event, './pages/1105')">
                 105.Head Section Tags
             </button>
-            <button class="navbarTwoLinks" value="HTML106" onclick="openNavLink(event, '1106')">
+            <button class="navbarTwoLinks" value="HTML106" onclick="openNavLink(event, './pages/1106')">
                 106.Body Tags - Image
             </button>
-            <button class="navbarTwoLinks" value="HTML107" onclick="openNavLink(event, '1107')">
+            <button class="navbarTwoLinks" value="HTML107" onclick="openNavLink(event, './pages/1107')">
                 107.Relative vs Absolute
             </button>
-            <button class="navbarTwoLinks" value="HTML108" onclick="openNavLink(event, '1108')">
+            <button class="navbarTwoLinks" value="HTML108" onclick="openNavLink(event, './pages/1108')">
                 108.Heading Tags
             </button>
-            <button class="navbarTwoLinks" value="HTML109" onclick="openNavLink(event, '1109')">
+            <button class="navbarTwoLinks" value="HTML109" onclick="openNavLink(event, './pages/1109')">
                 109.Block vs Inline Elements
             </button>
-            <button class="navbarTwoLinks" value="HTML110" onclick="openNavLink(event, '1110')">
+            <button class="navbarTwoLinks" value="HTML110" onclick="openNavLink(event, './pages/1110')">
                 110.Lists & Links
             </button>
-            <button class="navbarTwoLinks" value="HTML111" onclick="openNavLink(event, '1111')">
+            <button class="navbarTwoLinks" value="HTML111" onclick="openNavLink(event, './pages/1111')">
                 111.Table Tag
             </button>
-            <button class="navbarTwoLinks" value="HTML112" onclick="openNavLink(event, '1112')">
+            <button class="navbarTwoLinks" value="HTML112" onclick="openNavLink(event, './pages/1112')">
                 112.HTML Forms
             </button>
-            <button class="navbarTwoLinks" value="HTML113" onclick="openNavLink(event, '1113')">
+            <button class="navbarTwoLinks" value="HTML113" onclick="openNavLink(event, './pages/1113')">
                 113.Form Elements
             </button>
-            <button class="navbarTwoLinks" value="HTML114" onclick="openNavLink(event, '1114')">
+            <button class="navbarTwoLinks" value="HTML114" onclick="openNavLink(event, './pages/1114')">
                 114.Validations
             </button>
         </div>
@@ -61,57 +61,6 @@
         </div>
 
     </div>
-    <!-- <script>
-        function logBaseURL() {
-            const baseURL = window.location.origin + window.location.pathname;
-            console.log('Base URL:', baseURL);
-        }
-
-        logBaseURL();
-
-        function getFetchURL(filename) {
-            // Remove leading './' if present
-            temp = filename.replace(/^\.\//, '');
-
-            // Get the base path without the trailing slash
-            const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
-
-            // Construct the full URL
-            return `${window.location.origin}${basePath}/${temp}`;
-        }
-
-        function openNavLink(evt, cityName) {
-            var i, tablinks;
-            tablinks = document.getElementsByClassName("navbarTwoLinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            evt.currentTarget.className += " active";
-
-            // Example usage:
-            const fetchURL2 = getFetchURL(cityName);
-
-            console.log('Fetch URL 2:', fetchURL2);
-
-            // Load the content dynamically
-            fetch(fetchURL2)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('contenthigh').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error fetching page:', error);
-                });
-        }
-
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("navDefaultOpen").click();        
-    </script> -->
 </body>
 
 </html>
