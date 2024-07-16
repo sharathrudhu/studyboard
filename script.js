@@ -65,19 +65,22 @@ function initializeDefaultTab() {
     document.getElementById("navBarDefaultOpen").click();
 }
 
-initializeDefaultTab();
+document.addEventListener('DOMContentLoaded', (event) => {
+    initializeDefaultTab();
+    const buttons = document.querySelectorAll('.navbarTwoLinks');
+    let currentIndex = Array.from(buttons).findIndex(button => button.classList.contains('active'));
 
-let currentIndex = 0;
-const buttons = document.querySelectorAll('.navbarTwoLinks');
+    function navigate(direction) {
+        currentIndex += direction;
 
-function navigate(direction) {
-    currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = buttons.length - 1; // Loop to the last button
+        } else if (currentIndex >= buttons.length) {
+            currentIndex = 0; // Loop to the first button
+        }
 
-    if (currentIndex < 0) {
-        currentIndex = buttons.length - 1; // Loop to the last button
-    } else if (currentIndex >= buttons.length) {
-        currentIndex = 0; // Loop to the first button
+        buttons[currentIndex].click();
     }
 
-    buttons[currentIndex].click();
-}
+    window.navigate = navigate;
+});
