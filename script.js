@@ -13,7 +13,7 @@ function getFetchURL(filename) {
     const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
 
     // Construct the full URL
-    return `${window.location.origin}${basePath}/${temp}`;
+    return `${window.location.origin}${basePath}${temp}`;
 }
 
 function openLink(evt, cityName) {
