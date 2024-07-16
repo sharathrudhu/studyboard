@@ -7,13 +7,13 @@ logBaseURL();
 
 function getFetchURL(filename) {
     // Remove leading './' if present
-    filename = filename.replace(/^\.\//, '');
+    temp = filename.replace(/^\.\//, '');
 
     // Get the base path without the trailing slash
     const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
 
     // Construct the full URL
-    return `${window.location.origin}${basePath}/${filename}`;
+    return `${window.location.origin}${basePath}/${temp}`;
 }
 
 function openLink(evt, cityName) {
