@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scaler FE Study Board - HTML</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="./script.js"></script>
 </head>
 
 <body>
     <div id="page">
         <div id="navbarTwo">
-            <button class="navbarTwoLinks" value="HTML101" onclick="openNavLink(event, './pages/1101.html')" id="navDefaultOpen">
+            <button class="navbarTwoLinks" value="HTML101" onclick="openNavLink(event, './pages/1101.html')"
+                id="navDefaultOpen">
                 101.HTML Intro
             </button>
             <!-- <button class="navbarTwoLinks" value="HTML102" onclick="openNavLink(event, '1102')">
@@ -117,42 +117,55 @@
         </div> -->
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        function logBaseURL() {
+            const baseURL = window.location.origin + window.location.pathname;
+            console.log('Base URL:', baseURL);
+        }
 
-            function openNavLink(evt, cityName) {
-                var i, tablinks;
-                tablinks = document.getElementsByClassName("navbarTwoLinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                evt.currentTarget.className += " active";
-            
-                // Example usage:
-                const fetchURL = getFetchURL(cityName);
-            
-                console.log('Fetch URL 2:', fetchURL);
-            
-                // Load the content dynamically
-                fetch(fetchURL)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.text();
-                    })
-                    .then(data => {
-                        document.getElementById('contenthigh').innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error('Error fetching page:', error);
-                    });
+        logBaseURL();
+
+        function getFetchURL(filename) {
+            // Remove leading './' if present
+            temp = filename.replace(/^\.\//, '');
+
+            // Get the base path without the trailing slash
+            const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
+
+            // Construct the full URL
+            return `${window.location.origin}${basePath}${temp}`;
+        }
+
+        function openNavLink(evt, cityName) {
+            var i, tablinks;
+            tablinks = document.getElementsByClassName("navbarTwoLinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("navDefaultOpen").click();
-        
-        });
-        
+            evt.currentTarget.className += " active";
+
+            // Example usage:
+            const fetchURL2 = getFetchURL(cityName);
+
+            console.log('Fetch URL 2:', fetchURL2);
+
+            // Load the content dynamically
+            fetch(fetchURL2)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('contenthigh').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching page:', error);
+                });
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("navDefaultOpen").click();        
     </script>
 </body>
 
