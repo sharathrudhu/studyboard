@@ -70,7 +70,7 @@
 }
 
 #navBar button.active div span.icon {
-    background-color: #FFD600;
+    background-color: #004d4d;
     padding: 10px;
     border-radius: 50%;
 }
@@ -141,12 +141,13 @@
 
 #navbarTwo button:hover{
     border: 5px solid #FFF;
-    color: #FFD600;
+    color: #FFF;
     font-weight: bold;
+    background-color: #219390;
 }
 
 #navbarTwo button.active{
-    background-color: #FFD600;
+    background-color: #188f86;
     font-weight: 700;
     color: #FFF;
 }
